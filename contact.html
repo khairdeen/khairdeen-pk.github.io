@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order & Contact — Khair Deen Flour</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="announcement-bar">🌾 <span>LAUNCH OFFER:</span> 2kg bag at introductory price — Free delivery within Multan</div>
+<nav>
+  <div class="nav-logo"><a href="index.html"><img src="images/logo.png" alt="Khair Deen" onerror="this.style.display='none'; this.nextSibling.style.display='block'"/><strong style="display:none;color:#0D1B4B;font-size:20px;font-family:serif;">KHAIR DEEN</strong></a></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="story.html">Our Story</a></li>
+    <li><a href="product.html">Product</a></li>
+    <li><a href="feedback.html">Feedback</a></li>
+    <li><a href="contact.html" class="active nav-cta">Order Now</a></li>
+  </ul>
+</nav>
+
+<div style="background:var(--navy);padding:64px 40px;text-align:center;color:var(--cream);">
+  <div style="color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;">Place Your Order</div>
+  <h1 style="font-family:'Playfair Display',serif;font-size:46px;">Order & Contact</h1>
+</div>
+
+<div class="section">
+  <div class="contact-grid">
+
+    <div class="contact-info">
+      <div class="divider"></div>
+      <h3>Get In Touch</h3>
+      <p style="color:var(--text-gray);font-size:14px;line-height:1.9;margin-bottom:32px;">Order via WhatsApp for fastest response, or fill the order form. We deliver within Multan free of charge and ship across Pakistan.</p>
+
+      <a href="https://wa.me/923317929541?text=Hello!%20I%20would%20like%20to%20order%20Khair%20Deen%20Flour.%20Please%20share%20details." class="whatsapp-btn" target="_blank">
+        💬 Order on WhatsApp
+      </a>
+
+      <div style="margin-top:40px;">
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div><strong>Address</strong><span>King Foods, 10km from Multan near 500KV Grid Station, Khanewal Road, Multan, Punjab, Pakistan</span></div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📧</span>
+          <div><strong>Email</strong><span><a href="mailto:info@khair-deen.com.pk" style="color:var(--gold);">info@khair-deen.com.pk</a></span></div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📱</span>
+          <div><strong>Phone / WhatsApp</strong><span>+92 331 7929541</span></div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🚚</span>
+          <div><strong>Delivery</strong><span>Free delivery within Multan. Pakistan-wide shipping available. Cash on delivery (COD) accepted.</span></div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">💳</span>
+          <div><strong>Payment</strong><span>Cash | EasyPaisa | JazzCash | Bank Transfer</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORDER FORM -->
+    <div class="order-form">
+      <h3>Place an Order</h3>
+      <form id="orderForm" onsubmit="submitOrder(event)">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" placeholder="Your full name" required/>
+        </div>
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" placeholder="+92 3XX XXXXXXX" required/>
+        </div>
+        <div class="form-group">
+          <label>City / Area *</label>
+          <input type="text" placeholder="e.g. Multan, Lahore, Karachi" required/>
+        </div>
+        <div class="form-group">
+          <label>Delivery Address</label>
+          <textarea rows="2" placeholder="Street address for delivery"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Select Pack Size *</label>
+          <div class="qty-selector">
+            <div class="qty-box selected" id="box2kg" onclick="selectSize('2kg')">
+              <strong>2 kg</strong>
+              <span>Rs. 450 <del style="font-size:10px;opacity:0.6;">520</del></span>
+            </div>
+            <div class="qty-box" id="box5kg" onclick="selectSize('5kg')">
+              <strong>5 kg</strong>
+              <span>Rs. 1,050</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Quantity</label>
+          <input type="number" min="1" value="1" placeholder="Number of bags"/>
+        </div>
+        <div class="form-group">
+          <label>Payment Method</label>
+          <select>
+            <option>Cash on Delivery (COD)</option>
+            <option>EasyPaisa</option>
+            <option>JazzCash</option>
+            <option>Bank Transfer</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Special Instructions (optional)</label>
+          <textarea rows="2" placeholder="Any special notes for your order"></textarea>
+        </div>
+        <button type="submit" class="btn-submit">📦 Place Order</button>
+      </form>
+      <div id="orderConfirm" style="display:none;text-align:center;padding:32px;background:var(--light-cream);border-radius:8px;margin-top:16px;">
+        <div style="font-size:48px;margin-bottom:12px;">✅</div>
+        <h3 style="color:var(--navy);font-family:'Playfair Display',serif;">Order Received!</h3>
+        <p style="color:var(--text-gray);margin-bottom:16px;">We will contact you within a few hours to confirm your order and delivery details.</p>
+        <a href="https://wa.me/923317929541?text=Hello!%20I%20just%20placed%20an%20order%20on%20your%20website." class="whatsapp-btn" target="_blank">Confirm on WhatsApp too 💬</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<a href="https://wa.me/923317929541?text=Hello!%20I%20would%20like%20to%20order%20Khair%20Deen%20Flour" class="floating-wa" target="_blank">💬</a>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><p style="color:var(--gold);font-family:'Playfair Display',serif;font-size:18px;margin-bottom:8px;">KHAIR DEEN &nbsp;|&nbsp; خیردین</p><p>Built on science, driven by love. Milled in Punjab.</p></div>
+    <div class="footer-links"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="story.html">Our Story</a></li><li><a href="product.html">Product</a></li><li><a href="feedback.html">Feedback</a></li><li><a href="contact.html">Order</a></li></ul></div>
+    <div class="footer-links"><h4>Contact</h4><ul><li><a href="mailto:info@khair-deen.com.pk">info@khair-deen.com.pk</a></li><li><a href="https://wa.me/923317929541">WhatsApp</a></li><li><a href="#">Khanewal Road, Multan</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 M/S. Khair Deen (Pvt. Ltd.)</span><span>khair-deen.com.pk</span></div>
+</footer>
+<script>
+function selectSize(size) {
+  document.getElementById('box2kg').classList.toggle('selected', size==='2kg');
+  document.getElementById('box5kg').classList.toggle('selected', size==='5kg');
+}
+function submitOrder(e) {
+  e.preventDefault();
+  document.getElementById('orderForm').style.display = 'none';
+  document.getElementById('orderConfirm').style.display = 'block';
+}
+</script>
+</body>
+</html>

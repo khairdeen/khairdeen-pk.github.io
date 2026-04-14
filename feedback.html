@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback — Khair Deen Flour</title>
+  <meta name="description" content="Khair Deen Flour — low alpha-gliadin wheat from Punjab, Pakistan. Low glycemic index. Clinically evaluated."/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="announcement-bar">🌾 <span>LAUNCH OFFER:</span> 2kg bag at introductory price — Free delivery within Multan</div>
+<nav>
+  <div class="nav-logo"><a href="index.html"><strong style="color:#0D1B4B;font-size:22px;font-family:serif;letter-spacing:2px;">KHAIR DEEN</strong></a></div>
+  <ul class="nav-links">
+    <li><a href="index.html" >Home</a></li>
+    <li><a href="story.html" >Our Story</a></li>
+    <li><a href="product.html" >Product</a></li>
+    <li><a href="feedback.html" class='active'>Feedback</a></li>
+    <li><a href="contact.html" class="nav-cta ">Order Now</a></li>
+  </ul>
+</nav>
+<div style="background:var(--navy);padding:64px 40px;text-align:center;color:var(--cream);">
+  <div style="color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;">Your Experience Matters</div>
+  <h1 style="font-family:'Playfair Display',serif;font-size:46px;">Share Your Feedback</h1>
+  <p style="opacity:.7;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto;">Your experience helps other families and supports our ongoing clinical research.</p>
+</div>
+<div class="section">
+  <div class="feedback-grid">
+    <div class="feedback-form">
+      <h3>Share Your Experience</h3>
+      <form id="feedbackForm" onsubmit="submitFeedback(event)">
+        <div class="form-group"><label>Your Name *</label><input type="text" placeholder="e.g. Ahmad Khan" required/></div>
+        <div class="form-group"><label>City</label><input type="text" placeholder="e.g. Multan, Lahore"/></div>
+        <div class="form-group"><label>Health Condition (optional)</label>
+          <select><option value="">Prefer not to say</option><option>Celiac Disease</option><option>Gluten Sensitivity</option><option>Diabetes / Blood Sugar Management</option><option>General Health Consciousness</option><option>Other</option></select>
+        </div>
+        <div class="form-group"><label>How long have you been using it?</label>
+          <select><option>Just tried it once</option><option>1–2 weeks</option><option>1 month</option><option>More than 1 month</option></select>
+        </div>
+        <div class="form-group"><label>Overall Rating *</label>
+          <div class="stars" id="starRating">
+            <span class="star" onclick="setRating(1)">★</span><span class="star" onclick="setRating(2)">★</span>
+            <span class="star" onclick="setRating(3)">★</span><span class="star" onclick="setRating(4)">★</span>
+            <span class="star" onclick="setRating(5)">★</span>
+          </div>
+        </div>
+        <div class="form-group"><label>Did you notice health improvement?</label>
+          <select><option>Yes — significant</option><option>Yes — some improvement</option><option>No noticeable change</option><option>Too early to tell</option></select>
+        </div>
+        <div class="form-group"><label>Your Review *</label>
+          <textarea rows="4" placeholder="Tell us about your experience — taste, how you felt, would you recommend it?" required></textarea>
+        </div>
+        <div class="form-group"><label>May we share your feedback publicly?</label>
+          <select><option>Yes — with my name</option><option>Yes — anonymously only</option><option>No — keep private</option></select>
+        </div>
+        <button type="submit" class="btn-submit">Submit Feedback</button>
+      </form>
+      <div id="thankYou" style="display:none;text-align:center;padding:32px;background:var(--light-cream);border-radius:8px;margin-top:16px;">
+        <div style="font-size:48px;margin-bottom:12px;">🌾</div>
+        <h3 style="color:var(--navy);font-family:'Playfair Display',serif;">Jazak Allah Khair!</h3>
+        <p style="color:var(--text-gray);">Your feedback has been received. It helps us improve and helps other families make informed choices.</p>
+      </div>
+    </div>
+    <div class="testimonials">
+      <h3>What Our Customers Say</h3>
+      <div class="testimonial-card">
+        <div class="stars-display">★★★★★</div>
+        <p>"After years of avoiding roti, I finally found something that does not cause me pain. Khair Deen flour has genuinely changed my daily life."</p>
+        <div class="name">Ammi jaan, Multan</div><div class="tag">Celiac Disease — 2 months</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars-display">★★★★★</div>
+        <p>"My blood sugar spikes were a constant issue. Since switching to Khair Deen I have seen a noticeable improvement. The low glycemic index claim actually works."</p>
+        <div class="name">M. Tariq, Lahore</div><div class="tag">Diabetes Management — 6 weeks</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars-display">★★★★☆</div>
+        <p>"The dough is a bit firmer but once you get the technique right it makes excellent roti. I appreciate the scientific transparency."</p>
+        <div class="name">Dr. Sana R., Karachi</div><div class="tag">Gluten Sensitivity — 3 weeks</div>
+      </div>
+    </div>
+  </div>
+</div>
+<a href="https://wa.me/923317929541?text=Hello!%20I%20want%20to%20order%20Khair%20Deen%20Flour" class="floating-wa" target="_blank">💬</a>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><p style="color:#C8A96E;font-family:'Playfair Display',serif;font-size:20px;margin-bottom:10px;">KHAIR DEEN | خیردین</p><p>Low alpha-gliadin wheat flour, purely milled in Punjab. Built on science, driven by love.</p></div>
+    <div class="footer-links"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="story.html">Our Story</a></li><li><a href="product.html">Product</a></li><li><a href="feedback.html">Feedback</a></li><li><a href="contact.html">Order</a></li></ul></div>
+    <div class="footer-links"><h4>Contact</h4><ul><li><a href="mailto:info@khair-deen.com.pk">info@khair-deen.com.pk</a></li><li><a href="https://wa.me/923317929541">WhatsApp Order</a></li><li><span style="color:rgba(245,239,216,.7)">Khanewal Road, Multan</span></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 M/S. Khair Deen (Pvt. Ltd.) — All rights reserved</span><span>khair-deen.com.pk</span></div>
+</footer>
+<script>
+let rating=0;
+function setRating(val){rating=val;document.querySelectorAll('.star').forEach((s,i)=>s.classList.toggle('active',i<val));}
+function submitFeedback(e){e.preventDefault();document.getElementById('feedbackForm').style.display='none';document.getElementById('thankYou').style.display='block';}
+</script>
+</body></html>
