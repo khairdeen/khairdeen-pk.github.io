@@ -7,53 +7,91 @@
   <meta name="description" content="Khair Deen Flour — specially milled low alpha-gliadin wheat from Punjab, Pakistan."/>
   <link rel="stylesheet" href="style.css"/>
   <style>
-    /* HERO overrides for this page */
     .hero {
-      background: linear-gradient(135deg, var(--navy) 0%, #1a3080 100%);
-      min-height: 88vh;
+      position: relative;
+      min-height: 92vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
       flex-direction: column;
-      position: relative;
-      overflow: hidden;
+      text-align: center;
       padding: 80px 40px;
+      overflow: hidden;
     }
+    /* Layer 1: logo/cover image as background */
     .hero::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: url('images/bag-front.png') center/cover;
-      opacity: 0.08;
+      background: url('images/logo.png') center/cover no-repeat;
+      opacity: 0.18;
+      z-index: 0;
     }
-    .hero-logo-img {
-      width: 320px;
-      max-width: 80vw;
-      margin-bottom: 32px;
+    /* Layer 2: navy overlay on top */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, rgba(13,27,75,0.88) 0%, rgba(26,48,128,0.82) 100%);
       z-index: 1;
-      position: relative;
-      mix-blend-mode: screen;
-    }
-    /* Option B version — add class .hero-logo-inverted for pure white */
-    .hero-logo-inverted {
-      width: 320px;
-      max-width: 80vw;
-      margin-bottom: 32px;
-      z-index: 1;
-      position: relative;
-      filter: brightness(0) invert(1);
     }
     .hero-content {
-      max-width: 680px;
-      z-index: 1;
       position: relative;
-      text-align: center;
+      z-index: 2;
+      max-width: 750px;
     }
-    .hero-buttons {
+    /* Styled logo text — mimics the Khair Deen logo typography */
+    .hero-logo-text {
+      display: flex;
+      align-items: center;
       justify-content: center;
+      gap: 0;
+      margin-bottom: 28px;
+      position: relative;
     }
-    /* Navbar logo image */
+    .hero-logo-text::before,
+    .hero-logo-text::after {
+      content: '';
+      flex: 1;
+      height: 1.5px;
+      background: rgba(200,169,110,0.6);
+      max-width: 120px;
+    }
+    .hero-logo-text span {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      padding: 0 20px;
+      line-height: 1;
+    }
+    .hero-logo-text span em {
+      color: var(--gold);
+      font-style: normal;
+    }
+    .hero-urdu-sub {
+      font-size: 26px;
+      color: var(--gold);
+      margin-bottom: 8px;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+    .hero-tagline-italic {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: rgba(245,239,216,0.7);
+      font-size: 15px;
+      margin-bottom: 32px;
+      letter-spacing: 1px;
+    }
+    .hero-divider {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto 24px;
+    }
     .nav-logo-img {
       height: 52px;
       display: block;
@@ -70,8 +108,8 @@
   <div class="nav-logo">
     <a href="index.html">
       <img src="images/logo.png" alt="Khair Deen" class="nav-logo-img"
-           onerror="this.style.display='none'; document.getElementById('nav-text').style.display='block'"/>
-      <strong id="nav-text" style="display:none;color:#0D1B4B;font-size:22px;font-family:serif;letter-spacing:2px;">KHAIR DEEN</strong>
+           onerror="this.style.display='none'; this.nextSibling.style.display='block'"/>
+      <strong style="display:none;color:#0D1B4B;font-size:22px;font-family:serif;letter-spacing:2px;">KHAIR DEEN</strong>
     </a>
   </div>
   <ul class="nav-links">
@@ -83,20 +121,18 @@
   </ul>
 </nav>
 
-<!-- HERO — Logo centered, no bag panel -->
+<!-- HERO — logo image as background, styled text on top, no square -->
 <section class="hero">
-  <!-- OPTION A: mix-blend-mode (removes white bg on dark backgrounds) -->
-  <img src="images/logo.png" alt="Khair Deen" class="hero-logo-img" id="heroLogo"/>
-  <!-- Toggle button to switch between options -->
-  <div style="position:absolute;top:16px;right:16px;z-index:10;display:flex;gap:8px;">
-    <button onclick="setLogoStyle('screen')" style="background:rgba(255,255,255,0.15);color:var(--cream);border:1px solid rgba(255,255,255,0.3);padding:6px 12px;border-radius:4px;font-size:11px;cursor:pointer;letter-spacing:.5px;">Option A: Blend</button>
-    <button onclick="setLogoStyle('invert')" style="background:rgba(255,255,255,0.15);color:var(--cream);border:1px solid rgba(255,255,255,0.3);padding:6px 12px;border-radius:4px;font-size:11px;cursor:pointer;letter-spacing:.5px;">Option B: White Logo</button>
-  </div>
   <div class="hero-content">
+    <div class="hero-logo-text">
+      <span>KHAIR<em> 7 </em>DEEN</span>
+    </div>
+    <div class="hero-urdu-sub">خیردین</div>
+    <div class="hero-tagline-italic">From Our Family to Yours</div>
+    <div class="hero-divider"></div>
     <div class="hero-badge">🌾 Purely Milled in Punjab, Pakistan</div>
-    <h1 style="font-size:52px;margin-top:16px;">Flour That <span>Cares</span> for You</h1>
-    <div class="hero-urdu" style="text-align:center;">خیردین آٹا</div>
-    <p>A specially selected low alpha-gliadin wheat variety — clinically evaluated, low glycemic index, grown in the fertile fields of Multan, Punjab.</p>
+    <h1 style="font-size:46px;margin-top:20px;margin-bottom:16px;">Flour That <span>Cares</span> for You</h1>
+    <p style="max-width:560px;margin:0 auto 32px;">A specially selected low alpha-gliadin wheat variety — clinically evaluated, low glycemic index, grown in the fertile fields of Multan, Punjab.</p>
     <div class="hero-buttons">
       <a href="contact.html" class="btn-primary">Order Now</a>
       <a href="story.html" class="btn-secondary">Our Story</a>
@@ -140,7 +176,7 @@
       <img src="images/bag-front.png" alt="2kg Khair Deen Flour" style="height:200px;object-fit:contain;"/>
       <h3>Khair Deen Flour — 2kg</h3>
       <p style="color:var(--text-gray);font-size:13px;margin-bottom:12px;">Perfect for small families and first-time buyers</p>
-      <div class="product-price"><span class="old-price">Rs. 520</span>Rs. 1,370</div>
+      <div class="product-price"><span class="old-price">Rs. 1,500</span>Rs. 1,370</div>
       <div class="product-badges"><span class="pbadge navy">Low Alpha-Gliadin</span><span class="pbadge gold">Low GI</span></div>
       <a href="contact.html" class="btn-primary" style="display:block;margin-top:12px;">Order Now</a>
     </div>
@@ -203,19 +239,6 @@ function updateCountdown(){
   document.getElementById('secs').textContent=String(s).padStart(2,'0');
 }
 setInterval(updateCountdown,1000);updateCountdown();
-
-function setLogoStyle(mode) {
-  const logo = document.getElementById('heroLogo');
-  if (mode === 'screen') {
-    logo.style.mixBlendMode = 'screen';
-    logo.style.filter = 'none';
-  } else {
-    logo.style.mixBlendMode = 'normal';
-    logo.style.filter = 'brightness(0) invert(1)';
-  }
-}
-// Start with Option A
-setLogoStyle('screen');
 </script>
 </body>
 </html>
