@@ -33,6 +33,15 @@
       margin-bottom: 32px;
       z-index: 1;
       position: relative;
+      mix-blend-mode: screen;
+    }
+    /* Option B version — add class .hero-logo-inverted for pure white */
+    .hero-logo-inverted {
+      width: 320px;
+      max-width: 80vw;
+      margin-bottom: 32px;
+      z-index: 1;
+      position: relative;
       filter: brightness(0) invert(1);
     }
     .hero-content {
@@ -76,7 +85,13 @@
 
 <!-- HERO — Logo centered, no bag panel -->
 <section class="hero">
-  <img src="images/logo.png" alt="Khair Deen" class="hero-logo-img"/>
+  <!-- OPTION A: mix-blend-mode (removes white bg on dark backgrounds) -->
+  <img src="images/logo.png" alt="Khair Deen" class="hero-logo-img" id="heroLogo"/>
+  <!-- Toggle button to switch between options -->
+  <div style="position:absolute;top:16px;right:16px;z-index:10;display:flex;gap:8px;">
+    <button onclick="setLogoStyle('screen')" style="background:rgba(255,255,255,0.15);color:var(--cream);border:1px solid rgba(255,255,255,0.3);padding:6px 12px;border-radius:4px;font-size:11px;cursor:pointer;letter-spacing:.5px;">Option A: Blend</button>
+    <button onclick="setLogoStyle('invert')" style="background:rgba(255,255,255,0.15);color:var(--cream);border:1px solid rgba(255,255,255,0.3);padding:6px 12px;border-radius:4px;font-size:11px;cursor:pointer;letter-spacing:.5px;">Option B: White Logo</button>
+  </div>
   <div class="hero-content">
     <div class="hero-badge">🌾 Purely Milled in Punjab, Pakistan</div>
     <h1 style="font-size:52px;margin-top:16px;">Flour That <span>Cares</span> for You</h1>
@@ -125,7 +140,7 @@
       <img src="images/bag-front.png" alt="2kg Khair Deen Flour" style="height:200px;object-fit:contain;"/>
       <h3>Khair Deen Flour — 2kg</h3>
       <p style="color:var(--text-gray);font-size:13px;margin-bottom:12px;">Perfect for small families and first-time buyers</p>
-      <div class="product-price"><span class="old-price">Rs. 1,500</span>Rs. 1,370</div>
+      <div class="product-price"><span class="old-price">Rs. 520</span>Rs. 1,370</div>
       <div class="product-badges"><span class="pbadge navy">Low Alpha-Gliadin</span><span class="pbadge gold">Low GI</span></div>
       <a href="contact.html" class="btn-primary" style="display:block;margin-top:12px;">Order Now</a>
     </div>
@@ -133,7 +148,7 @@
       <img src="images/bag-front.png" alt="5kg Khair Deen Flour" style="height:200px;object-fit:contain;"/>
       <h3>Khair Deen Flour — 5kg</h3>
       <p style="color:var(--text-gray);font-size:13px;margin-bottom:12px;">Best value for regular households</p>
-      <div class="product-price">Rs. 3,200</div>
+      <div class="product-price">Rs. 1,050</div>
       <div class="product-badges"><span class="pbadge navy">Low Alpha-Gliadin</span><span class="pbadge gold">Low GI</span></div>
       <a href="contact.html" class="btn-primary" style="display:block;margin-top:12px;">Order Now</a>
     </div>
@@ -188,6 +203,19 @@ function updateCountdown(){
   document.getElementById('secs').textContent=String(s).padStart(2,'0');
 }
 setInterval(updateCountdown,1000);updateCountdown();
+
+function setLogoStyle(mode) {
+  const logo = document.getElementById('heroLogo');
+  if (mode === 'screen') {
+    logo.style.mixBlendMode = 'screen';
+    logo.style.filter = 'none';
+  } else {
+    logo.style.mixBlendMode = 'normal';
+    logo.style.filter = 'brightness(0) invert(1)';
+  }
+}
+// Start with Option A
+setLogoStyle('screen');
 </script>
 </body>
 </html>
