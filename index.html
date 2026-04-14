@@ -3,38 +3,93 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Khair Deen Flour — Khair Deen Flour</title>
-  <meta name="description" content="Khair Deen Flour — low alpha-gliadin wheat from Punjab, Pakistan. Low glycemic index. Clinically evaluated."/>
+  <title>Khair Deen Flour — Low Alpha-Gliadin Wheat, Milled in Punjab</title>
+  <meta name="description" content="Khair Deen Flour — specially milled low alpha-gliadin wheat from Punjab, Pakistan."/>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* HERO overrides for this page */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a3080 100%);
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 40px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('images/bag-front.png') center/cover;
+      opacity: 0.08;
+    }
+    .hero-logo-img {
+      width: 320px;
+      max-width: 80vw;
+      margin-bottom: 32px;
+      z-index: 1;
+      position: relative;
+      filter: brightness(0) invert(1);
+    }
+    .hero-content {
+      max-width: 680px;
+      z-index: 1;
+      position: relative;
+      text-align: center;
+    }
+    .hero-buttons {
+      justify-content: center;
+    }
+    /* Navbar logo image */
+    .nav-logo-img {
+      height: 52px;
+      display: block;
+    }
+  </style>
 </head>
 <body>
-<div class="announcement-bar">🌾 <span>LAUNCH OFFER:</span> 2kg bag at introductory price — Free delivery within Multan</div>
+
+<div class="announcement-bar">
+  🌾 <span>LAUNCH OFFER:</span> 2kg bag at introductory price — Free delivery within Multan &nbsp;|&nbsp; Scan pack QR to order
+</div>
+
 <nav>
-  <div class="nav-logo"><a href="index.html"><strong style="color:#0D1B4B;font-size:22px;font-family:serif;letter-spacing:2px;">KHAIR DEEN</strong></a></div>
+  <div class="nav-logo">
+    <a href="index.html">
+      <img src="images/logo.png" alt="Khair Deen" class="nav-logo-img"
+           onerror="this.style.display='none'; document.getElementById('nav-text').style.display='block'"/>
+      <strong id="nav-text" style="display:none;color:#0D1B4B;font-size:22px;font-family:serif;letter-spacing:2px;">KHAIR DEEN</strong>
+    </a>
+  </div>
   <ul class="nav-links">
-    <li><a href="index.html" class='active'>Home</a></li>
-    <li><a href="story.html" >Our Story</a></li>
-    <li><a href="product.html" >Product</a></li>
-    <li><a href="feedback.html" >Feedback</a></li>
-    <li><a href="contact.html" class="nav-cta ">Order Now</a></li>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="story.html">Our Story</a></li>
+    <li><a href="product.html">Product</a></li>
+    <li><a href="feedback.html">Feedback</a></li>
+    <li><a href="contact.html" class="nav-cta">Order Now</a></li>
   </ul>
 </nav>
+
+<!-- HERO — Logo centered, no bag panel -->
 <section class="hero">
+  <img src="images/logo.png" alt="Khair Deen" class="hero-logo-img"/>
   <div class="hero-content">
     <div class="hero-badge">🌾 Purely Milled in Punjab, Pakistan</div>
-    <h1>Flour That <span>Cares</span> for You</h1>
-    <div class="hero-urdu">خیردین آٹا</div>
+    <h1 style="font-size:52px;margin-top:16px;">Flour That <span>Cares</span> for You</h1>
+    <div class="hero-urdu" style="text-align:center;">خیردین آٹا</div>
     <p>A specially selected low alpha-gliadin wheat variety — clinically evaluated, low glycemic index, grown in the fertile fields of Multan, Punjab.</p>
     <div class="hero-buttons">
       <a href="contact.html" class="btn-primary">Order Now</a>
       <a href="story.html" class="btn-secondary">Our Story</a>
     </div>
   </div>
-  <div class="hero-image">
-    <img src="images/bag-front.png" alt="Khair Deen Flour 2kg"/>
-  </div>
 </section>
 
+<!-- Offer Banner with Countdown -->
 <div class="offer-banner">
   <div class="offer-text">
     <h3>🎉 Launch Introductory Offer — Limited Time</h3>
@@ -49,41 +104,44 @@
   <a href="contact.html" class="btn-primary">Claim Offer</a>
 </div>
 
+<!-- Badges Strip -->
 <div class="badges-strip">
   <div class="badge-item"><span class="badge-icon">🔬</span><div><strong>HPLC Verified</strong><span>Alpha-gliadin profile tested</span></div></div>
-  <div class="badge-item"><span class="badge-icon">📉</span><div><strong>Low Glycemic Index</strong><span>Suitable for diabetic-aware households</span></div></div>
+  <div class="badge-item"><span class="badge-icon">📉</span><div><strong>Low Glycemic Index</strong><span>Diabetic-aware households</span></div></div>
   <div class="badge-item"><span class="badge-icon">✅</span><div><strong>Clinically Evaluated</strong><span>Positive patient feedback</span></div></div>
   <div class="badge-item"><span class="badge-icon">🌾</span><div><strong>Punjab Milled</strong><span>King Foods, Multan</span></div></div>
   <div class="badge-item"><span class="badge-icon">☪️</span><div><strong>Halal Certified</strong><span>100% natural wheat</span></div></div>
 </div>
 
+<!-- Products -->
 <div style="background:var(--light-cream);">
 <div class="section">
   <div class="divider"></div>
   <h2 class="section-title">Our Products</h2>
-  <p class="section-subtitle">Available in 2kg and 5kg packs — same premium quality, choose what suits your family.</p>
+  <p class="section-subtitle">Available in 2kg and 5kg packs — same premium quality.</p>
   <div class="products-grid">
     <div class="product-card">
       <div class="offer-tag">LAUNCH OFFER</div>
       <img src="images/bag-front.png" alt="2kg Khair Deen Flour" style="height:200px;object-fit:contain;"/>
       <h3>Khair Deen Flour — 2kg</h3>
       <p style="color:var(--text-gray);font-size:13px;margin-bottom:12px;">Perfect for small families and first-time buyers</p>
-      <div class="product-price"><span class="old-price">Rs. 520</span>Rs. 450</div>
+      <div class="product-price"><span class="old-price">Rs. 1,500</span>Rs. 1,370</div>
       <div class="product-badges"><span class="pbadge navy">Low Alpha-Gliadin</span><span class="pbadge gold">Low GI</span></div>
-      <a href="contact.html" class="btn-primary" style="display:block;">Order Now</a>
+      <a href="contact.html" class="btn-primary" style="display:block;margin-top:12px;">Order Now</a>
     </div>
     <div class="product-card">
       <img src="images/bag-front.png" alt="5kg Khair Deen Flour" style="height:200px;object-fit:contain;"/>
       <h3>Khair Deen Flour — 5kg</h3>
       <p style="color:var(--text-gray);font-size:13px;margin-bottom:12px;">Best value for regular households</p>
-      <div class="product-price">Rs. 1,050</div>
+      <div class="product-price">Rs. 3,200</div>
       <div class="product-badges"><span class="pbadge navy">Low Alpha-Gliadin</span><span class="pbadge gold">Low GI</span></div>
-      <a href="contact.html" class="btn-primary" style="display:block;">Order Now</a>
+      <a href="contact.html" class="btn-primary" style="display:block;margin-top:12px;">Order Now</a>
     </div>
   </div>
 </div>
 </div>
 
+<!-- Story Teaser -->
 <div style="background:var(--navy);padding:80px 40px;">
   <div style="max-width:700px;margin:0 auto;text-align:center;color:var(--cream);">
     <div style="color:var(--gold);font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;">The Story Behind Khair Deen</div>
@@ -92,15 +150,33 @@
     <a href="story.html" class="btn-primary">Read Our Story</a>
   </div>
 </div>
+
 <a href="https://wa.me/923317929541?text=Hello!%20I%20want%20to%20order%20Khair%20Deen%20Flour" class="floating-wa" target="_blank">💬</a>
+
 <footer>
   <div class="footer-grid">
-    <div class="footer-brand"><p style="color:#C8A96E;font-family:'Playfair Display',serif;font-size:20px;margin-bottom:10px;">KHAIR DEEN | خیردین</p><p>Low alpha-gliadin wheat flour, purely milled in Punjab. Built on science, driven by love.</p></div>
-    <div class="footer-links"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="story.html">Our Story</a></li><li><a href="product.html">Product</a></li><li><a href="feedback.html">Feedback</a></li><li><a href="contact.html">Order</a></li></ul></div>
-    <div class="footer-links"><h4>Contact</h4><ul><li><a href="mailto:info@khair-deen.com.pk">info@khair-deen.com.pk</a></li><li><a href="https://wa.me/923317929541">WhatsApp Order</a></li><li><span style="color:rgba(245,239,216,.7)">Khanewal Road, Multan</span></li></ul></div>
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Khair Deen" style="height:48px;filter:brightness(0) invert(1);opacity:.9;margin-bottom:12px;" onerror="this.style.display='none'"/>
+      <p style="color:var(--gold);font-family:'Playfair Display',serif;font-size:18px;margin-bottom:8px;">KHAIR DEEN | خیردین</p>
+      <p>Low alpha-gliadin wheat flour, purely milled in Punjab. Built on science, driven by love.</p>
+    </div>
+    <div class="footer-links"><h4>Pages</h4><ul>
+      <li><a href="index.html">Home</a></li><li><a href="story.html">Our Story</a></li>
+      <li><a href="product.html">Product</a></li><li><a href="feedback.html">Feedback</a></li>
+      <li><a href="contact.html">Order</a></li>
+    </ul></div>
+    <div class="footer-links"><h4>Contact</h4><ul>
+      <li><a href="mailto:info@khair-deen.com.pk">info@khair-deen.com.pk</a></li>
+      <li><a href="https://wa.me/923317929541">WhatsApp Order</a></li>
+      <li><span style="color:rgba(245,239,216,.7)">Khanewal Road, Multan</span></li>
+    </ul></div>
   </div>
-  <div class="footer-bottom"><span>© 2026 M/S. Khair Deen (Pvt. Ltd.) — All rights reserved</span><span>khair-deen.com.pk</span></div>
+  <div class="footer-bottom">
+    <span>© 2026 M/S. Khair Deen (Pvt. Ltd.) — All rights reserved</span>
+    <span>khair-deen.com.pk</span>
+  </div>
 </footer>
+
 <script>
 const target=new Date();target.setDate(target.getDate()+30);
 function updateCountdown(){
@@ -113,4 +189,5 @@ function updateCountdown(){
 }
 setInterval(updateCountdown,1000);updateCountdown();
 </script>
-</body></html>
+</body>
+</html>
