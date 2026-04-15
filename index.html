@@ -25,18 +25,19 @@
       background: linear-gradient(135deg, #0D1B4B 0%, #1a3080 100%);
       z-index: 0;
     }
-    /* Layer 2: logo watermark — sits ON TOP of navy, BELOW text */
+    /* Layer 2: logo watermark — FULL SIZE same as blue panel */
     .hero::after {
       content: '';
       position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 60%;
-      max-width: 500px;
-      aspect-ratio: 3/1;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: url('images/logo.png') center/contain no-repeat;
-      opacity: 0.06;
+      opacity: 0.08;
       z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 750px;
     }
     .hero-brand-name {
       font-family: 'Playfair Display', serif;
@@ -125,21 +126,22 @@
 </nav>
 
 <section class="hero">
-  <!-- Brand name: KHAIR in white, DEEN in gold, no space -->
-  <div class="hero-brand-lines">
-    <div class="hero-brand-name">
-      <span class="part1">KHAIR</span><span class="part2">DEEN</span>
+  <div class="hero-content">
+    <div class="hero-brand-lines">
+      <div class="hero-brand-name">
+        <span class="part1">KHAIR</span><span class="part2">DEEN</span>
+      </div>
     </div>
-  </div>
-  <div class="hero-urdu-sub">خیردین</div>
-  <div class="hero-tagline-italic">Flour You Can Finally Trust</div>
-  <div class="hero-divider"></div>
-  <div class="hero-badge">🌾 Purely Milled in Punjab, Pakistan</div>
-  <h1 style="margin-top:18px;">Flour That <span>Cares</span> for You</h1>
-  <p>A specially selected low alpha-gliadin wheat variety — clinically evaluated, low glycemic index, grown in the fertile fields of Multan, Punjab.</p>
-  <div class="hero-buttons">
-    <a href="contact.html" class="btn-primary">Order Now</a>
-    <a href="story.html" class="btn-secondary">Our Story</a>
+    <div class="hero-urdu-sub">خیردین</div>
+    <div class="hero-tagline-italic">Flour You Can Finally Trust</div>
+    <div class="hero-divider"></div>
+    <div class="hero-badge">🌾 Purely Milled in Punjab, Pakistan</div>
+    <h1 style="margin-top:18px;">Flour That <span>Cares</span> for You</h1>
+    <p>A specially selected low alpha-gliadin wheat variety — clinically evaluated, low glycemic index, grown in the fertile fields of Multan, Punjab.</p>
+    <div class="hero-buttons">
+      <a href="contact.html" class="btn-primary">Order Now</a>
+      <a href="story.html" class="btn-secondary">Our Story</a>
+    </div>
   </div>
 </section>
 
