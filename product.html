@@ -22,7 +22,44 @@
     <span></span><span></span><span></span>
   </button>
 </nav>
-<style>@media(max-width:768px){.nav-toggle{display:flex !important;}}</style>
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
+
+/* Product detail layout fix */
+.product-detail { box-sizing: border-box; width: 100%; }
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  width: 100%;
+}
+.product-detail-image img { width: 100%; height: auto; max-width: 100%; }
+.product-detail-info h1 { font-size: clamp(24px, 5vw, 42px); }
+.product-detail-info .price { font-size: clamp(22px, 4vw, 36px); }
+
+@media(max-width:768px){
+  .nav-toggle { display: flex !important; }
+  .product-detail-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .product-detail-image { text-align: center; }
+  .product-detail-image img { max-width: 260px; margin: 0 auto; }
+  .product-detail-info h1 { font-size: clamp(22px, 7vw, 32px) !important; word-break: break-word; }
+  .product-detail-info { padding: 0 !important; }
+  .product-badges { flex-wrap: wrap; gap: 8px; }
+  .product-price, .price { font-size: clamp(18px, 5vw, 28px) !important; }
+  .section { padding: 32px 16px !important; }
+  .section-title { font-size: clamp(22px, 6vw, 32px) !important; }
+  .products-grid { grid-template-columns: 1fr !important; }
+}
+
+@media(max-width:480px){
+  .product-detail-info h1 { font-size: clamp(18px, 6vw, 26px) !important; }
+}
+</style>
 <div style="background:var(--navy);padding:64px 40px;text-align:center;color:var(--cream);">
   <div style="color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;">Low Alpha-Gliadin Wheat Flour</div>
   <h1 style="font-family:'Playfair Display',serif;font-size:46px;">Our Product</h1>
