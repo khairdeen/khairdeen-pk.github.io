@@ -120,13 +120,55 @@ footer{background:var(--dark-navy);color:rgba(245,239,216,.7);padding:48px 40px 
 .footer-links a:hover{color:var(--gold);}
 .footer-bottom{border-top:1px solid rgba(245,239,216,.1);padding-top:20px;display:flex;justify-content:space-between;font-size:12px;}
 @media(max-width:768px){
-  .hero{flex-direction:column;padding:48px 20px;text-align:center;min-height:auto;}
-  .hero h1{font-size:36px;}
-  .hero-image{display:none;}
-  .story-grid,.feedback-grid,.contact-grid,.footer-grid{grid-template-columns:1fr;}
-  nav{padding:12px 20px;}
+  /* NAV */
+  nav{padding:12px 16px;}
   .nav-links{display:none;}
-  .section{padding:48px 20px;}
-  .offer-banner{flex-direction:column;text-align:center;}
-  .badges-strip{gap:24px;padding:20px;}
+  .nav-logo-img{height:38px;}
+
+  /* HERO */
+  .hero{padding:48px 20px 40px;min-height:auto;text-align:center;}
+  .hero-brand-name{font-size:52px;letter-spacing:2px;}
+  .hero-brand-lines::before,.hero-brand-lines::after{width:40px;}
+  .hero-urdu-sub{font-size:20px;}
+  .hero-tagline-italic{font-size:13px;margin-bottom:24px;}
+  .hero h1{font-size:28px;}
+  .hero p{font-size:14px;}
+  .hero-image{display:none;}
+  .hero-buttons{flex-direction:column;align-items:center;gap:12px;}
+  .hero-buttons a{width:200px;text-align:center;}
+
+  /* ANNOUNCEMENT BAR */
+  .announcement-bar{font-size:11px;padding:8px 12px;text-align:center;}
+
+  /* OFFER BANNER */
+  .offer-banner{flex-direction:column;text-align:center;padding:24px 16px;gap:16px;}
+  .countdown{justify-content:center;}
+
+  /* BADGES */
+  .badges-strip{flex-wrap:wrap;gap:16px;padding:20px 16px;justify-content:center;}
+  .badge-item{min-width:140px;flex:0 0 45%;}
+
+  /* SECTIONS */
+  .section{padding:40px 16px;}
+  .section-title{font-size:26px;}
+
+  /* PRODUCTS */
+  .products-grid{grid-template-columns:1fr;}
+
+  /* STORY / FEEDBACK / CONTACT / FOOTER */
+  .story-grid,.feedback-grid,.contact-grid,.footer-grid{grid-template-columns:1fr;gap:24px;}
+
+  /* FOOTER */
+  footer{padding:32px 16px 20px;}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center;}
+
+  /* FORMS */
+  .qty-selector{flex-direction:column;}
+  .order-form{padding:24px 16px;}
+}
+
+@media(max-width:400px){
+  .hero-brand-name{font-size:40px;}
+  .hero h1{font-size:24px;}
+  .badge-item{flex:0 0 100%;}
 }
