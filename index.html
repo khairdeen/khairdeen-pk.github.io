@@ -7,9 +7,8 @@
   <link rel="stylesheet" href="style.css"/>
   <style>
     .hero {
-      background: linear-gradient(135deg, #0D1B4B 0%, #1a3080 100%);
       position: relative;
-      min-height: 92vh;
+      min-height: 58vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -17,6 +16,27 @@
       text-align: center;
       padding: 80px 40px;
       overflow: hidden;
+    }
+    /* Layer 1: navy solid background */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, #0D1B4B 0%, #1a3080 100%);
+      z-index: 0;
+    }
+    /* Layer 2: logo watermark — sits ON TOP of navy, BELOW text */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      max-width: 500px;
+      aspect-ratio: 3/1;
+      background: url('images/logo.png') center/contain no-repeat;
+      opacity: 0.06;
+      z-index: 1;
     }
     .hero-brand-name {
       font-family: 'Playfair Display', serif;
@@ -87,10 +107,12 @@
 
 <nav>
   <div class="nav-logo">
-    <a href="index.html">
+    <a href="index.html" style="text-decoration:none;">
       <img src="images/logo.png" alt="Khair Deen" class="nav-logo-img"
-           onerror="this.style.display='none'; this.nextSibling.style.display='block'"/>
-      <strong style="display:none;color:#0D1B4B;font-size:22px;font-family:serif;letter-spacing:2px;">KHAIR DEEN</strong>
+           onerror="this.style.display='none'; this.nextSibling.style.display='flex'"/>
+      <span style="display:none;align-items:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:700;letter-spacing:1px;">
+        <span style="color:#0D1B4B;">KHAIR</span><span style="color:#C8A96E;">DEEN</span>
+      </span>
     </a>
   </div>
   <ul class="nav-links">
@@ -184,8 +206,8 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="images/logo.png" alt="Khair Deen" style="height:48px;filter:brightness(0) invert(1);opacity:.9;margin-bottom:12px;" onerror="this.style.display='none'"/>
-      <p style="color:var(--gold);font-family:'Playfair Display',serif;font-size:18px;margin-bottom:8px;">KHAIR DEEN | خیردین</p>
+      <p style="color:var(--gold);font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:8px;letter-spacing:2px;"><span style="color:#ffffff;">KHAIR</span>DEEN</p>
+      <p style="color:rgba(200,169,110,0.7);font-size:13px;margin-bottom:8px;">خیردین</p>
       <p>Low alpha-gliadin wheat flour, purely milled in Punjab. Built on science, driven by love.</p>
     </div>
     <div class="footer-links"><h4>Pages</h4><ul>
