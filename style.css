@@ -119,56 +119,147 @@ footer{background:var(--dark-navy);color:rgba(245,239,216,.7);padding:48px 40px 
 .footer-links a{color:rgba(245,239,216,.7);text-decoration:none;font-size:13px;transition:color .3s;}
 .footer-links a:hover{color:var(--gold);}
 .footer-bottom{border-top:1px solid rgba(245,239,216,.1);padding-top:20px;display:flex;justify-content:space-between;font-size:12px;}
-@media(max-width:768px){
-  /* NAV */
-  nav{padding:12px 16px;}
-  .nav-links{display:none;}
-  .nav-logo-img{height:38px;}
 
-  /* HERO */
-  .hero{padding:48px 20px 40px;min-height:auto;text-align:center;}
-  .hero-brand-name{font-size:52px;letter-spacing:2px;}
-  .hero-brand-lines::before,.hero-brand-lines::after{width:40px;}
-  .hero-urdu-sub{font-size:20px;}
-  .hero-tagline-italic{font-size:13px;margin-bottom:24px;}
-  .hero h1{font-size:28px;}
-  .hero p{font-size:14px;}
-  .hero-image{display:none;}
-  .hero-buttons{flex-direction:column;align-items:center;gap:12px;}
-  .hero-buttons a{width:200px;text-align:center;}
+/* =============================================
+   FULLY RESPONSIVE — All Devices
+   Desktop > Laptop > Tablet > Phone > Small
+   ============================================= */
 
-  /* ANNOUNCEMENT BAR */
-  .announcement-bar{font-size:11px;padding:8px 12px;text-align:center;}
-
-  /* OFFER BANNER */
-  .offer-banner{flex-direction:column;text-align:center;padding:24px 16px;gap:16px;}
-  .countdown{justify-content:center;}
-
-  /* BADGES */
-  .badges-strip{flex-wrap:wrap;gap:16px;padding:20px 16px;justify-content:center;}
-  .badge-item{min-width:140px;flex:0 0 45%;}
-
-  /* SECTIONS */
-  .section{padding:40px 16px;}
-  .section-title{font-size:26px;}
-
-  /* PRODUCTS */
-  .products-grid{grid-template-columns:1fr;}
-
-  /* STORY / FEEDBACK / CONTACT / FOOTER */
-  .story-grid,.feedback-grid,.contact-grid,.footer-grid{grid-template-columns:1fr;gap:24px;}
-
-  /* FOOTER */
-  footer{padding:32px 16px 20px;}
-  .footer-bottom{flex-direction:column;gap:8px;text-align:center;}
-
-  /* FORMS */
-  .qty-selector{flex-direction:column;}
-  .order-form{padding:24px 16px;}
+/* LARGE DESKTOP (1400px+) */
+@media(min-width:1400px){
+  .section{max-width:1300px;margin:0 auto;}
+  .hero-brand-name{font-size:100px;}
+  .hero h1{font-size:52px;}
 }
 
-@media(max-width:400px){
-  .hero-brand-name{font-size:40px;}
-  .hero h1{font-size:24px;}
+/* TABLET LANDSCAPE & SMALL LAPTOP (768px–1024px) */
+@media(max-width:1024px){
+  .hero-brand-name{font-size:72px;}
+  .hero h1{font-size:38px;}
+  .products-grid{grid-template-columns:1fr 1fr;gap:24px;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
+  .contact-grid{grid-template-columns:1fr;}
+  .story-grid{grid-template-columns:1fr;}
+  .badges-strip{flex-wrap:wrap;gap:20px;justify-content:center;}
+  .badge-item{flex:0 0 45%;}
+}
+
+/* TABLET PORTRAIT (600px–768px) */
+@media(max-width:768px){
+  /* Nav */
+  nav{padding:10px 16px;}
+  .nav-logo-img{height:40px;}
+  .nav-links{display:none;}
+
+  /* Hamburger menu button */
+  .nav-toggle{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+    padding:6px;
+    background:none;
+    border:none;
+  }
+  .nav-toggle span{
+    display:block;
+    width:24px;
+    height:2px;
+    background:var(--navy);
+    border-radius:2px;
+    transition:all .3s;
+  }
+
+  /* Mobile nav dropdown */
+  .nav-links.open{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    top:64px;
+    left:0; right:0;
+    background:white;
+    padding:16px 24px;
+    box-shadow:0 8px 24px rgba(13,27,75,.12);
+    z-index:1000;
+    gap:4px;
+  }
+  .nav-links.open li a{
+    padding:10px 0;
+    display:block;
+    font-size:15px;
+    border-bottom:1px solid rgba(13,27,75,.06);
+  }
+  .nav-links.open .nav-cta{
+    margin-top:8px;
+    text-align:center;
+    border-radius:6px;
+    padding:10px;
+  }
+
+  /* Hero */
+  .hero{padding:48px 20px 40px;min-height:auto;}
+  .hero-brand-name{font-size:56px;letter-spacing:2px;}
+  .hero-brand-lines::before,.hero-brand-lines::after{width:36px;}
+  .hero-urdu-sub{font-size:22px;}
+  .hero-tagline-italic{font-size:13px;margin-bottom:24px;}
+  .hero h1{font-size:30px;}
+  .hero p{font-size:14px;padding:0 8px;}
+  .hero-buttons{flex-direction:column;align-items:center;gap:12px;}
+  .hero-buttons a{width:220px;text-align:center;}
+
+  /* Announcement */
+  .announcement-bar{font-size:11px;padding:8px 12px;text-align:center;line-height:1.6;}
+
+  /* Offer banner */
+  .offer-banner{flex-direction:column;text-align:center;padding:24px 16px;gap:16px;}
+  .countdown{justify-content:center;}
+  .countdown-box{min-width:56px;}
+
+  /* Badges */
+  .badges-strip{flex-wrap:wrap;gap:16px;padding:20px 16px;justify-content:center;}
+  .badge-item{flex:0 0 45%;min-width:130px;}
+
+  /* Sections */
+  .section{padding:40px 16px;}
+  .section-title{font-size:26px;}
+  .section-subtitle{font-size:13px;}
+
+  /* Products */
+  .products-grid{grid-template-columns:1fr;gap:20px;}
+
+  /* Grids → single column */
+  .story-grid,.feedback-grid,.contact-grid{grid-template-columns:1fr;gap:24px;}
+  .footer-grid{grid-template-columns:1fr;gap:20px;}
+
+  /* Footer */
+  footer{padding:32px 16px 20px;}
+  .footer-bottom{flex-direction:column;gap:6px;text-align:center;}
+
+  /* Forms */
+  .qty-selector{flex-direction:column;}
+  .order-form{padding:24px 16px;}
+
+  /* Story teaser section */
+  div[style*="padding:80px 40px"]{padding:48px 20px !important;}
+  div[style*="font-size:36px"]{font-size:26px !important;}
+}
+
+/* SMALL PHONE (max 480px) */
+@media(max-width:480px){
+  .hero-brand-name{font-size:44px;}
+  .hero h1{font-size:26px;}
+  .hero-urdu-sub{font-size:18px;}
   .badge-item{flex:0 0 100%;}
+  .countdown-box{min-width:48px;}
+  .countdown-box .num{font-size:24px;}
+  .products-grid{grid-template-columns:1fr;}
+  .section-title{font-size:22px;}
+}
+
+/* VERY SMALL (max 360px) */
+@media(max-width:360px){
+  .hero-brand-name{font-size:36px;letter-spacing:1px;}
+  .hero h1{font-size:22px;}
+  .hero p{font-size:13px;}
+  .btn-primary,.btn-secondary{padding:12px 20px;font-size:13px;}
 }

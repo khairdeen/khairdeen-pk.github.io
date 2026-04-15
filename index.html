@@ -31,7 +31,7 @@
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background: url('images/logo.png') center/contain no-repeat;
-      opacity: 0.22;
+      opacity: 0.08;
       z-index: 1;
     }
     .hero-content {
@@ -116,14 +116,22 @@
       </span>
     </a>
   </div>
-  <ul class="nav-links">
+  <ul class="nav-links" id="navMenu">
     <li><a href="index.html" class="active">Home</a></li>
     <li><a href="story.html">Our Story</a></li>
     <li><a href="product.html">Product</a></li>
     <li><a href="feedback.html">Feedback</a></li>
     <li><a href="contact.html" class="nav-cta">Order Now</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" onclick="document.getElementById('navMenu').classList.toggle('open')" style="display:none;">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<style>
+@media(max-width:768px){
+  .nav-toggle{display:flex !important;}
+}
+</style>
 
 <section class="hero">
   <div class="hero-content">

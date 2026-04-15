@@ -10,14 +10,18 @@
 <div class="announcement-bar">🌾 <span>LAUNCH OFFER:</span> 2kg bag at introductory price — Free delivery within Multan</div>
 <nav>
   <div class="nav-logo"><a href="index.html"><img src="images/logo.png" alt="Khair Deen" onerror="this.style.display='none'; this.nextSibling.style.display='block'"/><strong style="display:none;color:#0D1B4B;font-size:20px;font-family:serif;">KHAIR DEEN</strong></a></div>
-  <ul class="nav-links">
+  <ul class="nav-links" id="navMenu">
     <li><a href="index.html">Home</a></li>
     <li><a href="story.html">Our Story</a></li>
     <li><a href="product.html">Product</a></li>
     <li><a href="feedback.html">Feedback</a></li>
     <li><a href="contact.html" class="active nav-cta">Order Now</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" onclick="document.getElementById('navMenu').classList.toggle('open')" style="display:none;">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<style>@media(max-width:768px){.nav-toggle{display:flex !important;}}</style>
 
 <div style="background:var(--navy);padding:64px 40px;text-align:center;color:var(--cream);">
   <div style="color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;">Place Your Order</div>
