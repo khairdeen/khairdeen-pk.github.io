@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="style.css"/>
   <style>
     .hero {
+      background: linear-gradient(135deg, #0D1B4B 0%, #1a3080 100%);
       position: relative;
-      min-height: 70vh;
+      min-height: 92vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -16,22 +17,6 @@
       text-align: center;
       padding: 80px 40px;
       overflow: hidden;
-    }
-    /* Layer 1: cover/wheat field photo as background */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: url('images/cover.jpg') center/cover no-repeat;
-      z-index: 0;
-    }
-    /* Layer 2: navy blue overlay on top of photo */
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(135deg, rgba(13,27,75,0.82) 0%, rgba(26,48,128,0.78) 100%);
-      z-index: 1;
     }
     .hero-brand-name {
       font-family: 'Playfair Display', serif;
@@ -199,8 +184,8 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <p style="color:var(--gold);font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:8px;letter-spacing:2px;"><span style="color:#ffffff;">KHAIR</span>DEEN</p>
-      <p style="color:rgba(200,169,110,0.7);font-size:13px;margin-bottom:8px;">خیردین</p>
+      <img src="images/logo.png" alt="Khair Deen" style="height:48px;filter:brightness(0) invert(1);opacity:.9;margin-bottom:12px;" onerror="this.style.display='none'"/>
+      <p style="color:var(--gold);font-family:'Playfair Display',serif;font-size:18px;margin-bottom:8px;">KHAIR DEEN | خیردین</p>
       <p>Low alpha-gliadin wheat flour, purely milled in Punjab. Built on science, driven by love.</p>
     </div>
     <div class="footer-links"><h4>Pages</h4><ul>
