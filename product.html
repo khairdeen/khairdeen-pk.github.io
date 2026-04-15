@@ -4,107 +4,122 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Product — Khair Deen Flour</title>
-  <meta name="description" content="Khair Deen Flour — low alpha-gliadin wheat from Punjab, Pakistan. Low glycemic index. Clinically evaluated."/>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    html,body{overflow-x:hidden;width:100%;max-width:100%;}
+
+    .prod-hero{background:var(--navy);padding:64px 40px;text-align:center;color:var(--cream);}
+    .prod-hero .sub{color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+    .prod-hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,46px);margin:0;}
+
+    .prod-row{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:80px;width:100%;}
+    .prod-img{text-align:center;position:relative;}
+    .prod-img img{max-height:380px;width:100%;object-fit:contain;filter:drop-shadow(0 20px 40px rgba(13,27,75,.15));}
+    .launch-tag{position:absolute;top:0;right:0;background:#e74c3c;color:white;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;}
+    .prod-info h2{font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,36px);margin-bottom:8px;word-break:break-word;}
+    .prod-info .urdu{color:var(--gold);font-size:18px;margin-bottom:16px;font-family:'Playfair Display',serif;}
+    .prod-info ul{color:var(--text-gray);font-size:13px;line-height:2.2;list-style:none;margin-bottom:24px;padding:0;}
+
+    @media(max-width:768px){
+      .nav-toggle{display:flex !important;}
+      .prod-hero{padding:40px 16px;}
+      .prod-row{
+        grid-template-columns:1fr !important;
+        gap:24px !important;
+        margin-bottom:48px;
+      }
+      .prod-row.reverse .prod-img{order:-1;}
+      .prod-img img{max-height:260px;}
+      .prod-info h2{font-size:clamp(20px,6vw,28px);}
+      .prod-info .urdu{font-size:15px;}
+      .product-price{font-size:clamp(18px,5vw,26px);}
+      .product-badges{flex-wrap:wrap;gap:8px;}
+      .section{padding:32px 16px !important;}
+      .section-title{font-size:clamp(20px,5vw,28px);}
+      .lab-section{padding:24px 16px;}
+      .lab-badges{flex-wrap:wrap;gap:8px;}
+      .nutr-table{font-size:12px;}
+      .footer-grid{grid-template-columns:1fr;}
+      .footer-bottom{flex-direction:column;gap:6px;text-align:center;}
+    }
+    @media(max-width:480px){
+      .prod-hero{padding:32px 16px;}
+      .prod-img img{max-height:200px;}
+    }
+  </style>
 </head>
 <body>
 <div class="announcement-bar">🌾 <span>LAUNCH OFFER:</span> 2kg bag at introductory price — Free delivery within Multan</div>
 <nav>
   <div class="nav-logo"><a href="index.html" style="text-decoration:none;"><img src="images/logo.png" alt="Khair Deen" style="height:52px;display:block;" onerror="this.style.display='none'; this.nextSibling.style.display='flex'"/><span style="display:none;align-items:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:700;letter-spacing:1px;"><span style="color:#0D1B4B;">KHAIR</span><span style="color:#C8A96E;">DEEN</span></span></a></div>
   <ul class="nav-links" id="navMenu">
-    <li><a href="index.html" >Home</a></li>
-    <li><a href="story.html" >Our Story</a></li>
-    <li><a href="product.html" class='active'>Product</a></li>
-    <li><a href="feedback.html" >Feedback</a></li>
-    <li><a href="contact.html" class="nav-cta ">Order Now</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="story.html">Our Story</a></li>
+    <li><a href="product.html" class="active">Product</a></li>
+    <li><a href="feedback.html">Feedback</a></li>
+    <li><a href="contact.html" class="nav-cta">Order Now</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" onclick="document.getElementById('navMenu').classList.toggle('open')" style="display:none;">
     <span></span><span></span><span></span>
   </button>
 </nav>
-<style>
-*, *::before, *::after { box-sizing: border-box; }
-html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
 
-/* Product detail layout fix */
-.product-detail { box-sizing: border-box; width: 100%; }
-.product-detail-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: start;
-  width: 100%;
-}
-.product-detail-image img { width: 100%; height: auto; max-width: 100%; }
-.product-detail-info h1 { font-size: clamp(24px, 5vw, 42px); }
-.product-detail-info .price { font-size: clamp(22px, 4vw, 36px); }
-
-@media(max-width:768px){
-  .nav-toggle { display: flex !important; }
-  .product-detail-grid {
-    grid-template-columns: 1fr !important;
-    gap: 24px !important;
-  }
-  .product-detail-image { text-align: center; }
-  .product-detail-image img { max-width: 260px; margin: 0 auto; }
-  .product-detail-info h1 { font-size: clamp(22px, 7vw, 32px) !important; word-break: break-word; }
-  .product-detail-info { padding: 0 !important; }
-  .product-badges { flex-wrap: wrap; gap: 8px; }
-  .product-price, .price { font-size: clamp(18px, 5vw, 28px) !important; }
-  .section { padding: 32px 16px !important; }
-  .section-title { font-size: clamp(22px, 6vw, 32px) !important; }
-  .products-grid { grid-template-columns: 1fr !important; }
-}
-
-@media(max-width:480px){
-  .product-detail-info h1 { font-size: clamp(18px, 6vw, 26px) !important; }
-}
-</style>
-<div style="background:var(--navy);padding:64px 40px;text-align:center;color:var(--cream);">
-  <div style="color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;">Low Alpha-Gliadin Wheat Flour</div>
-  <h1 style="font-family:'Playfair Display',serif;font-size:46px;">Our Product</h1>
+<div class="prod-hero">
+  <div class="sub">Low Alpha-Gliadin Wheat Flour</div>
+  <h1>Our Product</h1>
 </div>
+
 <div class="section">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:80px;">
-    <div style="text-align:center;position:relative;">
-      <span style="position:absolute;top:0;right:0;background:#e74c3c;color:white;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;">LAUNCH OFFER</span>
-      <img src="images/bag-front.png" alt="Khair Deen 2kg" style="max-height:380px;filter:drop-shadow(0 20px 40px rgba(13,27,75,.15));"/>
+
+  <!-- 2kg Product -->
+  <div class="prod-row">
+    <div class="prod-img">
+      <span class="launch-tag">LAUNCH OFFER</span>
+      <img src="images/bag-front.png" alt="Khair Deen 2kg"/>
     </div>
-    <div>
+    <div class="prod-info">
       <div class="divider"></div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:36px;margin-bottom:8px;">Khair Deen Flour — 2kg</h2>
-      <p style="color:var(--gold);font-size:18px;margin-bottom:16px;font-family:'Playfair Display',serif;">خیردین آٹا</p>
+      <h2>Khair Deen Flour — 2kg</h2>
+      <p class="urdu">خیردین آٹا</p>
       <div class="product-price"><span class="old-price">Rs. 1,500</span>Rs. 1,370</div>
       <div class="product-badges" style="justify-content:flex-start;margin:16px 0;">
-        <span class="pbadge navy">Low Alpha-Gliadin</span><span class="pbadge gold">Low Glycemic Index</span>
+        <span class="pbadge navy">Low Alpha-Gliadin</span>
+        <span class="pbadge gold">Low Glycemic Index</span>
         <span class="pbadge" style="background:var(--light-cream);color:var(--navy);border:1px solid var(--navy);">HPLC Verified</span>
         <span class="pbadge" style="background:var(--light-cream);color:var(--navy);border:1px solid var(--navy);">Halal</span>
       </div>
-      <ul style="color:var(--text-gray);font-size:13px;line-height:2.2;list-style:none;margin-bottom:24px;">
-        <li>✅ Low immunogenic gliadin profile</li><li>✅ Low Glycemic Index — suitable for diabetics</li>
-        <li>✅ Purely milled in Multan, Punjab</li><li>✅ No additives or bleaching agents</li>
+      <ul>
+        <li>✅ Low immunogenic gliadin profile</li>
+        <li>✅ Low Glycemic Index — suitable for diabetics</li>
+        <li>✅ Purely milled in Multan, Punjab</li>
+        <li>✅ No additives or bleaching agents</li>
         <li>✅ Clinically evaluated — positive feedback</li>
       </ul>
       <a href="contact.html" class="btn-primary">Order Now</a>
     </div>
   </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:64px;">
-    <div>
+
+  <!-- 5kg Product -->
+  <div class="prod-row reverse">
+    <div class="prod-info">
       <div class="divider"></div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:36px;margin-bottom:8px;">Khair Deen Flour — 5kg</h2>
-      <p style="color:var(--gold);font-size:18px;margin-bottom:16px;font-family:'Playfair Display',serif;">خیردین آٹا — بڑا پیک</p>
-      <div class="product-price">Rs. 1,050</div>
+      <h2>Khair Deen Flour — 5kg</h2>
+      <p class="urdu">خیردین آٹا — بڑا پیک</p>
+      <div class="product-price">Rs. 3,200</div>
       <div class="product-badges" style="justify-content:flex-start;margin:16px 0;">
-        <span class="pbadge navy">Low Alpha-Gliadin</span><span class="pbadge gold">Low Glycemic Index</span>
+        <span class="pbadge navy">Low Alpha-Gliadin</span>
+        <span class="pbadge gold">Low Glycemic Index</span>
         <span class="pbadge" style="background:var(--light-cream);color:var(--navy);border:1px solid var(--navy);">Best Value</span>
       </div>
       <p style="color:var(--text-gray);line-height:1.9;font-size:14px;margin-bottom:24px;">Best value for regular households. Same premium flour, larger pack for daily roti and cooking.</p>
       <a href="contact.html" class="btn-primary">Order Now</a>
     </div>
-    <div style="text-align:center;">
-      <img src="images/bag-front.png" alt="Khair Deen 5kg" style="max-height:380px;filter:drop-shadow(0 20px 40px rgba(13,27,75,.15));"/>
+    <div class="prod-img">
+      <img src="images/bag-front.png" alt="Khair Deen 5kg"/>
     </div>
   </div>
+
   <div class="divider"></div>
   <h2 class="section-title">Nutritional Information</h2>
   <div class="accordion">
@@ -112,9 +127,12 @@ html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
     <div class="accordion-body" id="nutr">
       <table class="nutr-table">
         <tr><th>Nutrient</th><th>Per 100g</th></tr>
-        <tr><td>Energy</td><td>340 kcal</td></tr><tr><td>Protein</td><td>10.0 g</td></tr>
-        <tr><td>Total Fat</td><td>1.5 g</td></tr><tr><td>Carbohydrates</td><td>72.0 g</td></tr>
-        <tr><td>Dietary Fiber</td><td>3.0 g</td></tr><tr><td>Gluten (total)</td><td>~10.0 g</td></tr>
+        <tr><td>Energy</td><td>340 kcal</td></tr>
+        <tr><td>Protein</td><td>10.0 g</td></tr>
+        <tr><td>Total Fat</td><td>1.5 g</td></tr>
+        <tr><td>Carbohydrates</td><td>72.0 g</td></tr>
+        <tr><td>Dietary Fiber</td><td>3.0 g</td></tr>
+        <tr><td>Gluten (total)</td><td>~10.0 g</td></tr>
         <tr><td>Sodium</td><td>2 mg</td></tr>
       </table>
     </div>
@@ -134,22 +152,42 @@ html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
     <h3>🔬 Lab Report & Scientific Profile</h3>
     <p>Khair Deen Flour has been subjected to HPLC analysis to characterize its alpha-gliadin subgroup profile. We are committed to full scientific transparency — scan the QR on the packaging to access the latest results.</p>
     <div class="lab-badges">
-      <span class="lab-badge">HPLC Analyzed</span><span class="lab-badge">Alpha-Gliadin Profiled</span>
+      <span class="lab-badge">HPLC Analyzed</span>
+      <span class="lab-badge">Alpha-Gliadin Profiled</span>
       <span class="lab-badge">DQ2.5-Glia-α Epitopes Characterized</span>
-      <span class="lab-badge">10 Patients Evaluated</span><span class="lab-badge">Positive Clinical Feedback</span>
+      <span class="lab-badge">10 Patients Evaluated</span>
+      <span class="lab-badge">Positive Clinical Feedback</span>
     </div>
     <a href="feedback.html" class="btn-primary">View Patient Feedback →</a>
   </div>
 </div>
+
 <a href="https://wa.me/923317929541?text=Hello!%20I%20want%20to%20order%20Khair%20Deen%20Flour" class="floating-wa" target="_blank">💬</a>
+
 <footer>
   <div class="footer-grid">
-    <div class="footer-brand"><p style="color:#C8A96E;font-family:'Playfair Display',serif;font-size:20px;margin-bottom:10px;">KHAIR DEEN | خیردین</p><p>Low alpha-gliadin wheat flour, purely milled in Punjab. Built on science, driven by love.</p></div>
-    <div class="footer-links"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="story.html">Our Story</a></li><li><a href="product.html">Product</a></li><li><a href="feedback.html">Feedback</a></li><li><a href="contact.html">Order</a></li></ul></div>
-    <div class="footer-links"><h4>Contact</h4><ul><li><a href="mailto:info@khair-deen.com.pk">info@khair-deen.com.pk</a></li><li><a href="https://wa.me/923317929541">WhatsApp Order</a></li><li><span style="color:rgba(245,239,216,.7)">Khanewal Road, Multan</span></li></ul></div>
+    <div class="footer-brand">
+      <p style="color:var(--gold);font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:8px;letter-spacing:2px;"><span style="color:#ffffff;">KHAIR</span>DEEN</p>
+      <p style="color:rgba(200,169,110,0.7);font-size:13px;margin-bottom:8px;">خیردین</p>
+      <p>Low alpha-gliadin wheat flour, purely milled in Punjab. Built on science, driven by love.</p>
+    </div>
+    <div class="footer-links"><h4>Pages</h4><ul>
+      <li><a href="index.html">Home</a></li><li><a href="story.html">Our Story</a></li>
+      <li><a href="product.html">Product</a></li><li><a href="feedback.html">Feedback</a></li>
+      <li><a href="contact.html">Order</a></li>
+    </ul></div>
+    <div class="footer-links"><h4>Contact</h4><ul>
+      <li><a href="mailto:info@khair-deen.com.pk">info@khair-deen.com.pk</a></li>
+      <li><a href="https://wa.me/923317929541">WhatsApp Order</a></li>
+      <li><span style="color:rgba(245,239,216,.7)">Khanewal Road, Multan</span></li>
+    </ul></div>
   </div>
-  <div class="footer-bottom"><span>© 2026 M/S. Khair Deen (Pvt. Ltd.) — All rights reserved</span><span>khair-deen.com.pk</span></div>
+  <div class="footer-bottom">
+    <span>© 2026 M/S. Khair Deen (Pvt. Ltd.) — All rights reserved</span>
+    <span>khair-deen.com.pk</span>
+  </div>
 </footer>
+
 <script>
 function toggle(id){const b=document.getElementById(id),a=document.getElementById(id+'-a');b.classList.toggle('open');a.textContent=b.classList.contains('open')?'▲':'▼';}
 </script>
