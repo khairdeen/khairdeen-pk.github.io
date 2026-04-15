@@ -16,23 +16,21 @@
       text-align: center;
       padding: 80px 40px;
       overflow: hidden;
-      background: #0D1B4B;
     }
-    /* Layer 1: logo image as faint watermark */
+    /* Layer 1: cover/wheat field photo as background */
     .hero::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: url('images/logo.png') center/contain no-repeat;
-      opacity: 0.07;
+      background: url('images/cover.jpg') center/cover no-repeat;
       z-index: 0;
     }
-    /* Layer 2: navy gradient overlay */
+    /* Layer 2: navy blue overlay on top of photo */
     .hero::after {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(135deg, rgba(13,27,75,0.92) 0%, rgba(26,48,128,0.88) 100%);
+      background: linear-gradient(135deg, rgba(13,27,75,0.82) 0%, rgba(26,48,128,0.78) 100%);
       z-index: 1;
     }
     .hero-brand-name {
@@ -171,7 +169,7 @@
       <img src="images/bag-front.png" alt="2kg" style="height:200px;object-fit:contain;"/>
       <h3>Khair Deen Flour — 2kg</h3>
       <p style="color:var(--text-gray);font-size:13px;margin-bottom:12px;">Perfect for small families and first-time buyers</p>
-      <div class="product-price"><span class="old-price">Rs. 1,500</span>Rs. 1,370</div>
+      <div class="product-price"><span class="old-price">Rs. 520</span>Rs. 450</div>
       <div class="product-badges"><span class="pbadge navy">Low Alpha-Gliadin</span><span class="pbadge gold">Low GI</span></div>
       <a href="contact.html" class="btn-primary" style="display:block;margin-top:12px;">Order Now</a>
     </div>
@@ -179,7 +177,7 @@
       <img src="images/bag-front.png" alt="5kg" style="height:200px;object-fit:contain;"/>
       <h3>Khair Deen Flour — 5kg</h3>
       <p style="color:var(--text-gray);font-size:13px;margin-bottom:12px;">Best value for regular households</p>
-      <div class="product-price">Rs. 3,200</div>
+      <div class="product-price">Rs. 1,050</div>
       <div class="product-badges"><span class="pbadge navy">Low Alpha-Gliadin</span><span class="pbadge gold">Low GI</span></div>
       <a href="contact.html" class="btn-primary" style="display:block;margin-top:12px;">Order Now</a>
     </div>
