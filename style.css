@@ -198,11 +198,11 @@ footer{background:var(--dark-navy);color:rgba(245,239,216,.7);padding:48px 40px 
 
   /* Hero */
   .hero{padding:48px 20px 40px;min-height:auto;}
-  .hero-brand-name{font-size:56px;letter-spacing:2px;}
+  .hero-brand-name{font-size:clamp(28px,11vw,56px);letter-spacing:1px;}
   .hero-brand-lines::before,.hero-brand-lines::after{width:36px;}
   .hero-urdu-sub{font-size:22px;}
   .hero-tagline-italic{font-size:13px;margin-bottom:24px;}
-  .hero h1{font-size:30px;}
+  .hero h1{font-size:clamp(20px,6vw,30px);}
   .hero p{font-size:14px;padding:0 8px;}
   .hero-buttons{flex-direction:column;align-items:center;gap:12px;}
   .hero-buttons a{width:220px;text-align:center;}
@@ -246,8 +246,8 @@ footer{background:var(--dark-navy);color:rgba(245,239,216,.7);padding:48px 40px 
 
 /* SMALL PHONE (max 480px) */
 @media(max-width:480px){
-  .hero-brand-name{font-size:44px;}
-  .hero h1{font-size:26px;}
+  .hero-brand-name{font-size:clamp(26px,10vw,44px);}
+  .hero h1{font-size:clamp(18px,5.5vw,26px);}
   .hero-urdu-sub{font-size:18px;}
   .badge-item{flex:0 0 100%;}
   .countdown-box{min-width:48px;}
@@ -258,8 +258,8 @@ footer{background:var(--dark-navy);color:rgba(245,239,216,.7);padding:48px 40px 
 
 /* VERY SMALL (max 360px) */
 @media(max-width:360px){
-  .hero-brand-name{font-size:36px;letter-spacing:1px;}
-  .hero h1{font-size:22px;}
+  .hero-brand-name{font-size:clamp(24px,9vw,36px);}
+  .hero h1{font-size:clamp(17px,5vw,22px);}
   .hero p{font-size:13px;}
   .btn-primary,.btn-secondary{padding:12px 20px;font-size:13px;}
 }
