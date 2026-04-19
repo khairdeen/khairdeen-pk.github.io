@@ -10,7 +10,6 @@
     html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
     p, h1, h2, h3, span, div { word-break: break-word; overflow-wrap: break-word; }
 
-    /* ── Hero ── */
     .hero {
       position: relative; min-height: 58vh; width: 100%;
       display: flex; align-items: center;
@@ -19,7 +18,8 @@
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg,#0D1B4B 0%,#1a3080 100%); z-index:0;
+      background: linear-gradient(135deg,#0D1B4B 0%,#1a3080 100%);
+      z-index:0;
     }
     .hero::after {
       content: ''; position: absolute; inset: 0;
@@ -58,11 +58,7 @@
     .hero-buttons { justify-content:center; }
     .nav-logo-img { height:52px; display:block; }
 
-    /* ══════════════════════════════════════════
-       VIDEO HIGHLIGHT SECTION — replaces weak blink
-       ══════════════════════════════════════════ */
-
-    /* 1. Floating sticky video bubble (bottom-right corner) */
+    /* Floating sticky video bubble only */
     .video-bubble {
       position: fixed;
       bottom: 90px;
@@ -97,7 +93,7 @@
     .video-bubble-inner .play-icon {
       font-size: 28px;
       color: #0D1B4B;
-      margin-left: 4px; /* optical center for triangle */
+      margin-left: 4px;
     }
     .video-bubble-label {
       margin-top: 6px;
@@ -122,125 +118,6 @@
       to   { transform: rotate(360deg); }
     }
 
-    /* 2. Inline video card in the badges strip */
-    .video-feature-card {
-      background: linear-gradient(135deg, #0D1B4B 0%, #1a3080 100%);
-      border: 2px solid #C8A96E;
-      border-radius: 16px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      padding: 20px 24px;
-      margin: 32px auto;
-      max-width: 720px;
-      box-shadow: 0 0 32px rgba(200,169,110,0.18);
-      text-decoration: none;
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-    }
-    .video-feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 48px rgba(200,169,110,0.35);
-    }
-    /* Animated gold border glow */
-    .video-feature-card::before {
-      content: '';
-      position: absolute;
-      inset: -2px;
-      border-radius: 18px;
-      background: linear-gradient(90deg, #C8A96E, #f0c040, #C8A96E);
-      background-size: 200%;
-      animation: border-shimmer 3s linear infinite;
-      z-index: -1;
-    }
-    @keyframes border-shimmer {
-      0%   { background-position: 0%; }
-      100% { background-position: 200%; }
-    }
-
-    .video-thumbnail-wrap {
-      position: relative;
-      flex-shrink: 0;
-      width: 130px;
-      height: 80px;
-      border-radius: 10px;
-      overflow: hidden;
-      background: #000;
-    }
-    .video-thumbnail-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.85;
-    }
-    .video-play-btn {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(0,0,0,0.3);
-    }
-    .video-play-btn span {
-      width: 36px;
-      height: 36px;
-      background: #C8A96E;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      color: #0D1B4B;
-      padding-left: 3px;
-      animation: play-beat 1.5s ease-in-out infinite;
-    }
-    @keyframes play-beat {
-      0%,100% { transform: scale(1); }
-      50%      { transform: scale(1.15); }
-    }
-
-    .video-card-text { flex: 1; text-align: left; }
-    .video-card-eyebrow {
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #C8A96E;
-      margin-bottom: 6px;
-      font-weight: 700;
-    }
-    .video-card-title {
-      color: #fff;
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(14px, 3vw, 19px);
-      font-weight: 700;
-      margin-bottom: 6px;
-      line-height: 1.3;
-    }
-    .video-card-sub {
-      color: rgba(200,169,110,0.75);
-      font-size: 12px;
-      line-height: 1.5;
-    }
-    .video-card-arrow {
-      color: #C8A96E;
-      font-size: 24px;
-      flex-shrink: 0;
-      animation: arrow-bounce 1.4s ease-in-out infinite;
-    }
-    @keyframes arrow-bounce {
-      0%,100% { transform: translateX(0); }
-      50%      { transform: translateX(6px); }
-    }
-
-    @media (max-width: 540px) {
-      .video-feature-card { flex-direction: column; text-align: center; padding: 18px; }
-      .video-thumbnail-wrap { width: 100%; height: 160px; }
-      .video-card-text { text-align: center; }
-      .video-card-arrow { display: none; }
-    }
-
-    /* ── Alpha-Gliadin badge link — upgraded from blink to shimmer ── */
     .alpha-blink-link {
       background: linear-gradient(90deg, #C8A96E 0%, #f0c040 50%, #C8A96E 100%);
       background-size: 200%;
@@ -258,7 +135,6 @@
       100% { background-position: 200%; }
     }
 
-    /* ── Flour bag drop-bounce ── */
     @keyframes dropBounce {
       0%   { transform: translateY(-300px) rotate(-8deg); opacity:0; }
       60%  { transform: translateY(20px) rotate(3deg); opacity:1; }
@@ -269,7 +145,6 @@
     .bag-drop   { animation: dropBounce 1.2s cubic-bezier(0.22,1,0.36,1) forwards; opacity:0; animation-delay:0.3s; }
     .bag-drop-2 { animation: dropBounce 1.2s cubic-bezier(0.22,1,0.36,1) forwards; opacity:0; animation-delay:0.6s; }
 
-    /* ── Fade-in sections ── */
     @keyframes fadeInUp {
       from { opacity:0; transform:translateY(30px); }
       to   { opacity:1; transform:translateY(0); }
@@ -365,28 +240,6 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     VIDEO FEATURE CARD — prominent inline placement
-     ══════════════════════════════════════════ -->
-<div style="background:var(--light-cream); padding: 0 20px 10px;">
-  <a href="https://www.youtube.com/watch?v=SKtXURKDJjI&t=3s"
-     target="_blank" class="video-feature-card">
-    <!-- YouTube thumbnail (auto-generated URL) -->
-    <div class="video-thumbnail-wrap">
-      <img src="https://img.youtube.com/vi/SKtXURKDJjI/mqdefault.jpg"
-           alt="Alpha-Gliadin Free Wheat Video"
-           onerror="this.src='images/bag-front.png'"/>
-      <div class="video-play-btn"><span>▶</span></div>
-    </div>
-    <div class="video-card-text">
-      <div class="video-card-eyebrow">▶ Watch the Science</div>
-      <div class="video-card-title">What is Alpha-Gliadin Free Wheat?</div>
-      <div class="video-card-sub">Understand the research behind Khair Deen Flour — why it's gentler on your gut, lower in inflammation, and better for your health.</div>
-    </div>
-    <div class="video-card-arrow">→</div>
-  </a>
-</div>
-
 <div style="background:var(--light-cream);">
   <div class="section">
     <div class="divider"></div>
@@ -395,7 +248,7 @@
     <div class="products-grid">
       <div class="product-card">
         <div class="offer-tag">LAUNCH OFFER</div>
-        <img src="images/bag-front.png" alt="2kg" class="bag-drop"
+        <img src="images/bag-front.png" alt="2kg Khair Deen Flour" class="bag-drop"
              style="height:200px;object-fit:contain;"/>
         <h3>Khair Deen Flour — 2kg</h3>
         <p style="color:var(--text-gray);font-size:13px;margin-bottom:12px;">Perfect for small families and first-time buyers</p>
@@ -407,7 +260,7 @@
         <a href="contact.html" class="btn-primary" style="display:block;margin-top:12px;">Order Now</a>
       </div>
       <div class="product-card">
-        <img src="images/bag-front.png" alt="5kg" class="bag-drop-2"
+        <img src="images/bag-front.png" alt="5kg Khair Deen Flour" class="bag-drop-2"
              style="height:200px;object-fit:contain;"/>
         <h3>Khair Deen Flour — 5kg</h3>
         <p style="color:var(--text-gray);font-size:13px;margin-bottom:12px;">Best value for regular households</p>
@@ -431,6 +284,68 @@
   </div>
 </div>
 
-<!-- ── Floating sticky video bubble ── -->
 <a href="https://www.youtube.com/watch?v=SKtXURKDJjI&t=3s"
-   target="_blank" class="video-bubble" title="Watch: Alpha-Gliadin Free 
+   target="_blank" rel="noopener noreferrer"
+   class="video-bubble" title="Watch: Alpha-Gliadin Free Wheat — The Science">
+  <div class="video-bubble-inner">
+    <span class="play-icon">▶</span>
+  </div>
+  <div class="video-bubble-label">Watch Video</div>
+</a>
+
+<a href="https://wa.me/923317929541?text=Hello!%20I%20want%20to%20order%20Khair%20Deen%20Flour"
+   class="floating-wa" target="_blank" rel="noopener noreferrer">💬</a>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <p style="color:var(--gold);font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:8px;letter-spacing:2px;">
+        <span style="color:#ffffff;">KHAIR</span>DEEN
+      </p>
+      <p style="color:rgba(200,169,110,0.7);font-size:13px;margin-bottom:8px;">خیردین</p>
+      <p>Alpha-gliadin free wheat flour, purely milled in Punjab. Built on science, driven by love.</p>
+    </div>
+    <div class="footer-links"><h4>Pages</h4><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="story.html">Our Story</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="contact.html">Order</a></li>
+    </ul></div>
+    <div class="footer-links"><h4>Contact</h4><ul>
+      <li><a href="mailto:info@khair-deen.com.pk">info@khair-deen.com.pk</a></li>
+      <li><a href="https://wa.me/923317929541" target="_blank" rel="noopener noreferrer">WhatsApp Order</a></li>
+      <li><span style="color:rgba(245,239,216,.7)">Khanewal Road, Multan</span></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 M/S. Khair Deen (Pvt. Ltd.) — All rights reserved</span>
+    <span>khair-deen.com.pk</span>
+  </div>
+</footer>
+
+<script>
+  const OFFER_END_DATE = '2026-05-31T23:59:59';
+  const target = new Date(OFFER_END_DATE);
+
+  function updateCountdown() {
+    const diff = target - new Date();
+    if (diff <= 0) {
+      const el = document.querySelector('.countdown');
+      if (el) el.innerHTML = '<p style="color:#C8A96E;font-weight:700;font-size:16px;padding:10px 0;">🎉 Offer Ended — Contact us for current pricing</p>';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor(diff % 86400000 / 3600000);
+    const m = Math.floor(diff % 3600000 / 60000);
+    const s = Math.floor(diff % 60000 / 1000);
+    document.getElementById('days').textContent  = String(d).padStart(2,'0');
+    document.getElementById('hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('mins').textContent  = String(m).padStart(2,'0');
+    document.getElementById('secs').textContent  = String(s).padStart(2,'0');
+  }
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>
+</body>
+</html>
