@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
-:root{--navy:#0D1B4B;--cream:#F5EFD8;--gold:#C8A96E;--light-cream:#FAF5E8;--dark-navy:#080F2A;--text-gray:#555;--white:#ffffff;}
+:root{--navy:#113222;--cream:#F5EFD8;--gold:#C8A96E;--light-cream:#FAF5E8;--dark-navy:#080F2A;--text-gray:#555;--white:#ffffff;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Inter',sans-serif;background:var(--light-cream);color:var(--navy);overflow-x:hidden;}
 .announcement-bar{background:var(--navy);color:var(--cream);text-align:center;padding:10px 20px;font-size:13px;letter-spacing:.5px;}
